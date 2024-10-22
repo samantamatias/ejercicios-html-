@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    
-    
-    <title>suma de dos numeros</title>
-<script>
-    function sumar(){
-        var num1 = parseFloat(document.getElementById("num1").value)
-        var num2 = parseFloat(document.getElementById("num2").value)
-        var suma = num1 + num2;
+   
+    <title>CALCULADORA DE SUMA</title>
+    <style>
+        body {
+            
 
-        document.getElementById("resultado").textContent = "la suma es:" + suma;
-
-    }
-
-</script>
+            background-color: #92e418; 
+        }
+        .suma-container {
+            background-color: rgb(214, 146, 94); 
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px hsla(273, 65%, 55%, 0.1);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>calculadora de sumar</h1>x
-    <p>Introduce dos números para calcular la suma:</p>
-    
-    <label for="num1" >Número 1:</label>
-    <input type="number" id="num1" required><br><br>
-    <label for="num2" >Número 2:</label>
-    <input type="number" id="num2" required><br><br>
-    <button onclick="sumar()">Calcular suma</button>
 
+<div class="suma-container">
+    <h2>CALCULADORA DE SUMA</h2>
+     <p>introduce dos numeros para calcular la suma:</p>
+    <form>
+        <label for="numero1">Número 1:</label><br>
+        <input type="number" id="numero1" name="numero1"><br><br>
+        
+        <label for="numero2">Número 2:</label><br>
+        <input type="number" id="numero2" name="numero2"><br><br>
+        
+        <input type="button" value="Sumar" onclick="sumar()">
+    </form>
     <p id="resultado"></p>
-    </body>
-    </html>
+</div>
+
+<script>
+    function sumar() {
+        const num1 = parseFloat(document.getElementById('numero1').value);
+        const num2 = parseFloat(document.getElementById('numero2').value);
+        const resultado = num1 + num2;
+        document.getElementById('resultado').innerText = 'Resultado: ' + resultado;
+    }
+</script>
+
+</body>
+</html>
